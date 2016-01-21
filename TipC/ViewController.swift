@@ -15,8 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var amountDisplay: UITextField!
 
     @IBOutlet weak var resultConstraint: NSLayoutConstraint!
-    @IBOutlet weak var dividerConstraint: NSLayoutConstraint!
+    //@IBOutlet weak var dividerConstraint: NSLayoutConstraint!
     @IBOutlet weak var amountConstraint: NSLayoutConstraint!
+    @IBOutlet weak var billButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var dividerButtonConstraint: NSLayoutConstraint!
     
     var divideButton = false
     var amountButton = true
@@ -29,9 +31,10 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        resultConstraint.constant = 3.14 * dividerButtonConstraint.constant
+        dividerButtonConstraint.constant = 0.6 * billButtonConstraint.constant
         resultConstraint.constant = 3 * amountConstraint.constant
-        amountConstraint.constant = 1.5 * dividerConstraint.constant
+        //amountConstraint.constant = 1.5 * dividerConstraint.constant
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +51,7 @@ class ViewController: UIViewController {
     @IBAction func amountTapped(sender: AnyObject) {
         divideButton = false
         amountButton = true
+        amountDisplay.text = "0"
     }
     
     @IBAction func numberTapped(sender: AnyObject) {
@@ -89,11 +93,11 @@ class ViewController: UIViewController {
         let bill : Double = NSNumberFormatter().numberFromString(amountDisplay.text!)!.doubleValue
         divide = NSNumberFormatter().numberFromString( divideDisplay.text!)!.doubleValue
         if ( sender.currentTitle == "15%" ) {
-            resultDisplay.text = "\( bill * 1.15 / divide )"
+            resultDisplay.text = "\( round((bill * 1.15 / divide) * 100) / 100 )"
         } else if ( sender.currentTitle == "18%" ) {
-            resultDisplay.text = "\( bill * 1.18 / divide )"
+            resultDisplay.text = "\( round((bill * 1.18 / divide) * 100) / 100 )"
         } else if ( sender.currentTitle == "20%" ) {
-            resultDisplay.text = "\( bill * 1.20 / divide )"
+            resultDisplay.text = "\( round((bill * 1.20 / divide) * 100) / 100 )"
         }
         
     }
