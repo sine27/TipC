@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     @IBAction func divideTapped(sender: AnyObject) {
         divideButton = true
         amountButton = false
+        divideDisplay.text = "0"
     }
     
     @IBAction func amountTapped(sender: AnyObject) {
@@ -65,7 +66,7 @@ class ViewController: UIViewController {
                     divideDisplay.text = "1"
                 }
             } else if ( num != "delete" ) {
-                if (  divideDisplay.text == "1" ) {
+                if (  divideDisplay.text == "0" ) {
                      divideDisplay.text = ""
                 }
                  divideDisplay.text =  divideDisplay.text! + num!!

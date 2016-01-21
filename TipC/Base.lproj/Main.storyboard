@@ -81,7 +81,7 @@
                                             <constraint firstItem="YoH-si-yIG" firstAttribute="width" secondItem="9jG-FG-h1z" secondAttribute="width" id="kod-5g-ObA"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPz-CB-BU5">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPz-CB-BU5">
                                         <rect key="frame" x="0.0" y="269" width="414" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="CQo-Y3-tA3"/>
