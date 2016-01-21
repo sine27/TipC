@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var divideDisplay: UITextField!
     @IBOutlet weak var amountDisplay: UITextField!
 
+    @IBOutlet weak var resultConstraint: NSLayoutConstraint!
+    @IBOutlet weak var dividerConstraint: NSLayoutConstraint!
+    @IBOutlet weak var amountConstraint: NSLayoutConstraint!
     
     var divideButton = false
     var amountButton = true
@@ -22,6 +25,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        resultConstraint.constant = 3 * amountConstraint.constant
+        amountConstraint.constant = 1.5 * dividerConstraint.constant
     }
 
     override func didReceiveMemoryWarning() {
